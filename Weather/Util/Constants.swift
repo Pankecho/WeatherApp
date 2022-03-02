@@ -13,7 +13,7 @@ public struct Constants {
 
     public struct URLs {
         static func getWeather(by city: String) -> URL? {
-            return URL(string: "https://api.openweathermao.org/data/2.5/weather?q=\(city.escaped)&appid=\(Constants.API_KEY)")
+            return URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city.escaped)&appid=\(Constants.API_KEY)")
         }
 
         static func getWeatherIcon(using icon: String) -> String {

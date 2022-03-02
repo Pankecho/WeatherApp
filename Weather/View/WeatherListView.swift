@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 private enum Sheets: Identifiable {
     var id: UUID {
@@ -17,12 +18,13 @@ private enum Sheets: Identifiable {
 }
 
 struct WeatherListView: View {
+    @EnvironmentObject private var store: Store
     @State private var activeSheet: Sheets?
 
     var body: some View {
         List {
-            ForEach(1...20, id: \.self) { index in
-                Text("\(index)")
+            ForEach(Array(store.weatherList), id: \.city) { item in
+                WeatherCell(vm: item)
             }
         }
         .listStyle(.plain)
@@ -41,8 +43,10 @@ struct WeatherListView: View {
             switch item {
             case .add:
                 AddCityView()
+                    .environmentObject(store)
             case .settings:
                 SettingsView()
+                    .environmentObject(store)
             }
         }
     }
@@ -51,31 +55,45 @@ struct WeatherListView: View {
 struct WeatherList_Previews: PreviewProvider {
     static var previews: some View {
         WeatherListView()
+            .environmentObject(Store())
     }
 }
 
 struct WeatherCell: View {
+    private let viewModel: WeatherViewModel
+
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 15 ) {
-                Text("Houston")
+                Text(viewModel.city)
                     .fontWeight(.bold)
 
                 HStack {
-                    Image(systemName: "")
-                    Text("\(Date().format())")
+                    Image(systemName: "sunrise")
+                    Text(viewModel.sunrise)
                 }
 
                 HStack {
-                    Image(systemName: "")
-                    Text("\(Date().format())")
+                    Image(systemName: "sunset")
+                    Text(viewModel.sunset)
                 }
             }
             Spacer()
 
-            Text("72 F")
+            URLImage(viewModel.icon) { image in
+                image
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .aspectRatio(contentMode: .fit)
+            }
+
+            Text("\(viewModel.temperature)")
         }
         .padding()
         .cornerRadius(10)
+    }
+
+    init(vm: WeatherViewModel) {
+        self.viewModel = vm
     }
 }

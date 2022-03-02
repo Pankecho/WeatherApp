@@ -7,8 +7,8 @@
 
 import Foundation
 
-class AddWeather: ObservableObject {
-    private var city = ""
+class AddWeatherViewModel: ObservableObject {
+    var city = ""
 
     private let client = HttpClient()
 

@@ -12,12 +12,14 @@ public struct WeatherResponse: Decodable {
     let weather: Weather
     let icon: [WeatherIcon]
     let sys: Sys
+    let id: Int
 
     private enum CodingKeys: String, CodingKey {
         case name
         case weather = "main"
         case icon = "weather"
         case sys
+        case id
     }
 
     private enum WeatherKeys: String, CodingKey {
@@ -30,11 +32,13 @@ public struct WeatherResponse: Decodable {
         name = try container.decode(String.self, forKey: .name)
         icon = try container.decode([WeatherIcon].self, forKey: .icon)
         sys = try container.decode(Sys.self, forKey: .sys)
+        id = try container.decode(Int.self, forKey: .id)
 
         let weatherContainer = try container.nestedContainer(keyedBy: WeatherKeys.self, forKey: .weather)
         let temperature = try weatherContainer.decode(Double.self, forKey: .temperature)
 
-        self.weather = Weather(city: name,
+        self.weather = Weather(id: id,
+                               city: name,
                                temperature: temperature,
                                icon: icon.first?.icon ?? "",
                                sunset: sys.sunset,
@@ -68,6 +72,7 @@ public struct Sys: Decodable {
 }
 
 public struct Weather: Decodable {
+    let id: Int
     let city: String
     let temperature: Double
     let icon: String

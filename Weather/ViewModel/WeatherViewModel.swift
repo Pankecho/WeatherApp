@@ -10,8 +10,12 @@ import Foundation
 public struct WeatherViewModel {
     private let weather: Weather
 
-    var temperature: Double {
-        return weather.temperature
+    var id: String {
+        return "\(weather.id)"
+    }
+
+    var temperature: Int {
+        return Int(weather.temperature)
     }
 
     var city: String {
@@ -26,7 +30,22 @@ public struct WeatherViewModel {
         return weather.sunset.format()
     }
 
+    var icon: URL {
+        return URL(string: Constants.URLs.getWeatherIcon(using: weather.icon))!
+    }
+
     init(w: Weather) {
         weather = w
+    }
+}
+
+extension WeatherViewModel: Hashable {
+    
+    public var hashValue: Int {
+        return weather.id
+    }
+
+    public static func == (lhs: WeatherViewModel, rhs: WeatherViewModel) -> Bool {
+        return lhs.id == rhs.id
     }
 }
