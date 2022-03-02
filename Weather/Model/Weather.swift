@@ -37,7 +37,8 @@ public struct WeatherResponse: Decodable {
         self.weather = Weather(city: name,
                                temperature: temperature,
                                icon: icon.first?.icon ?? "",
-                               sunset: sys.sunset.format())
+                               sunset: sys.sunset,
+                               sunrise: sys.sunrise)
     }
 }
 
@@ -70,5 +71,6 @@ public struct Weather: Decodable {
     let city: String
     let temperature: Double
     let icon: String
-    let sunset: String
+    let sunset: Date
+    let sunrise: Date
 }

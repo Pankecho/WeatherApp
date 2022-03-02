@@ -20,5 +20,19 @@ public protocol Client {
 public final class HttpClient: Client {
     public func getWeather(by city: String,
                            completion: @escaping ((Result<Weather, NetworkError>) -> Void)) {
+        guard let url = Constants.URLs.getWeather(by: city) else {
+            return completion(.failure(.badURL))
+        }
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                return completion(.failure(.noData))
+            }
+
+            if let response = try? JSONDecoder().decode(WeatherResponse.self, from: data) {
+                completion(.success(response.weather))
+            }
+        }
+        .resume()
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CBF2041F27CF0CEC0074F735 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2041E27CF0CEC0074F735 /* WeatherApp.swift */; };
-		CBF2042127CF0CEC0074F735 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2042027CF0CEC0074F735 /* ContentView.swift */; };
 		CBF2042327CF0CED0074F735 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF2042227CF0CED0074F735 /* Assets.xcassets */; };
 		CBF2042627CF0CED0074F735 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF2042527CF0CED0074F735 /* Preview Assets.xcassets */; };
 		CBF2042F27CF0EB70074F735 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2042E27CF0EB70074F735 /* Weather.swift */; };
@@ -18,12 +17,18 @@
 		CBF2043927CF16EC0074F735 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2043827CF16EC0074F735 /* UserDefaults.swift */; };
 		CBF2043B27CF16F40074F735 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2043A27CF16F40074F735 /* View.swift */; };
 		CBF2043F27CF186C0074F735 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2043E27CF186C0074F735 /* Constants.swift */; };
+		CBF2044227CFE37F0074F735 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = CBF2044127CFE37F0074F735 /* URLImage */; };
+		CBF2044627CFE6240074F735 /* WeatherListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2044527CFE6240074F735 /* WeatherListView.swift */; };
+		CBF2044827CFF6090074F735 /* AddWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2044727CFF6090074F735 /* AddWeatherViewModel.swift */; };
+		CBF2044A27CFF64D0074F735 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2044927CFF64D0074F735 /* WeatherViewModel.swift */; };
+		CBF2044C27CFF8920074F735 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2044B27CFF8920074F735 /* SettingsView.swift */; };
+		CBF2044E27CFF89B0074F735 /* AddCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2044D27CFF89B0074F735 /* AddCityView.swift */; };
+		CBF2045027CFFA0E0074F735 /* TemperatureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF2044F27CFFA0E0074F735 /* TemperatureUnit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CBF2041B27CF0CEC0074F735 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF2041E27CF0CEC0074F735 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
-		CBF2042027CF0CEC0074F735 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBF2042227CF0CED0074F735 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBF2042527CF0CED0074F735 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CBF2042E27CF0EB70074F735 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -33,6 +38,12 @@
 		CBF2043827CF16EC0074F735 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		CBF2043A27CF16F40074F735 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		CBF2043E27CF186C0074F735 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CBF2044527CFE6240074F735 /* WeatherListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListView.swift; sourceTree = "<group>"; };
+		CBF2044727CFF6090074F735 /* AddWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherViewModel.swift; sourceTree = "<group>"; };
+		CBF2044927CFF64D0074F735 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		CBF2044B27CFF8920074F735 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CBF2044D27CFF89B0074F735 /* AddCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityView.swift; sourceTree = "<group>"; };
+		CBF2044F27CFFA0E0074F735 /* TemperatureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF2044227CFE37F0074F735 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,12 +77,13 @@
 		CBF2041D27CF0CEC0074F735 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				CBF2044427CFE6140074F735 /* View */,
+				CBF2044327CFE4510074F735 /* ViewModel */,
 				CBF2043C27CF18570074F735 /* Util */,
 				CBF2043327CF16CD0074F735 /* Extensions */,
 				CBF2043027CF16470074F735 /* Service */,
 				CBF2042D27CF0E990074F735 /* Model */,
 				CBF2041E27CF0CEC0074F735 /* WeatherApp.swift */,
-				CBF2042027CF0CEC0074F735 /* ContentView.swift */,
 				CBF2042227CF0CED0074F735 /* Assets.xcassets */,
 				CBF2042427CF0CED0074F735 /* Preview Content */,
 			);
@@ -89,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				CBF2042E27CF0EB70074F735 /* Weather.swift */,
+				CBF2044F27CFFA0E0074F735 /* TemperatureUnit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +134,25 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		CBF2044327CFE4510074F735 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CBF2044727CFF6090074F735 /* AddWeatherViewModel.swift */,
+				CBF2044927CFF64D0074F735 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CBF2044427CFE6140074F735 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CBF2044527CFE6240074F735 /* WeatherListView.swift */,
+				CBF2044B27CFF8920074F735 /* SettingsView.swift */,
+				CBF2044D27CFF89B0074F735 /* AddCityView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,6 +169,9 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				CBF2044127CFE37F0074F735 /* URLImage */,
+			);
 			productName = Weather;
 			productReference = CBF2041B27CF0CEC0074F735 /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -164,6 +200,9 @@
 				Base,
 			);
 			mainGroup = CBF2041227CF0CEC0074F735;
+			packageReferences = (
+				CBF2044027CFE37F0074F735 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = CBF2041C27CF0CEC0074F735 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -191,14 +230,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBF2043B27CF16F40074F735 /* View.swift in Sources */,
+				CBF2044A27CFF64D0074F735 /* WeatherViewModel.swift in Sources */,
 				CBF2043727CF16DD0074F735 /* String.swift in Sources */,
-				CBF2042127CF0CEC0074F735 /* ContentView.swift in Sources */,
+				CBF2044827CFF6090074F735 /* AddWeatherViewModel.swift in Sources */,
 				CBF2043527CF16D70074F735 /* Date.swift in Sources */,
 				CBF2042F27CF0EB70074F735 /* Weather.swift in Sources */,
+				CBF2045027CFFA0E0074F735 /* TemperatureUnit.swift in Sources */,
 				CBF2043227CF16580074F735 /* Client.swift in Sources */,
+				CBF2044627CFE6240074F735 /* WeatherListView.swift in Sources */,
 				CBF2043927CF16EC0074F735 /* UserDefaults.swift in Sources */,
 				CBF2041F27CF0CEC0074F735 /* WeatherApp.swift in Sources */,
 				CBF2043F27CF186C0074F735 /* Constants.swift in Sources */,
+				CBF2044C27CFF8920074F735 /* SettingsView.swift in Sources */,
+				CBF2044E27CFF89B0074F735 /* AddCityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +445,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CBF2044027CFE37F0074F735 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CBF2044127CFE37F0074F735 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBF2044027CFE37F0074F735 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBF2041327CF0CEC0074F735 /* Project object */;
 }

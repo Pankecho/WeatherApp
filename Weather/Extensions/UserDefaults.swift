@@ -9,5 +9,10 @@ import Foundation
 
 extension UserDefaults {
 
-    var unit: T
+    var unit: TemperatureUnit {
+        guard let value = self.value(forKey: "unit") as? String else {
+            return .celsius
+        }
+        return TemperatureUnit(rawValue: value) ?? .celsius
+    }
 }
