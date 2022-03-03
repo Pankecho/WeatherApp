@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var store: Store
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @State private var selectedUnit: TemperatureUnit = .celsius
+    @AppStorage("unit") private var selectedUnit: TemperatureUnit = .kelvin
 
     var body: some View {
         VStack {
@@ -28,6 +29,7 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .navigationBarItems(trailing: Button(action: {
             mode.wrappedValue.dismiss()
+            store.selectedUnit = selectedUnit
         }, label: {
             Text("Done")
         }))
@@ -38,5 +40,6 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .environmentObject(Store())
     }
 }

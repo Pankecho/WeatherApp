@@ -9,6 +9,11 @@ import Foundation
 
 public final class Store: ObservableObject {
     @Published var weatherList: Set<WeatherViewModel> = Set<WeatherViewModel>()
+    @Published var selectedUnit: TemperatureUnit = .kelvin
+
+    init() {
+        selectedUnit = UserDefaults.standard.unit
+    }
 
     func addWeather(_ weather: WeatherViewModel) {
         weatherList.insert(weather)

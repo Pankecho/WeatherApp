@@ -37,6 +37,17 @@ public struct WeatherViewModel {
     init(w: Weather) {
         weather = w
     }
+
+    public func convertTemperature(to unit: TemperatureUnit) -> Int {
+        switch unit {
+        case .celsius:
+            return Int(weather.temperature - 273.15)
+        case .fahrenheit:
+            return Int(1.8 * (weather.temperature - 273.15) + 32)
+        case .kelvin:
+            return temperature
+        }
+    }
 }
 
 extension WeatherViewModel: Hashable {

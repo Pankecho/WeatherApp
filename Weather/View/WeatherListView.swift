@@ -24,7 +24,7 @@ struct WeatherListView: View {
     var body: some View {
         List {
             ForEach(Array(store.weatherList), id: \.city) { item in
-                WeatherCell(vm: item)
+                WeatherCell(vm: item, unit: store.selectedUnit)
             }
         }
         .listStyle(.plain)
@@ -60,6 +60,7 @@ struct WeatherList_Previews: PreviewProvider {
 }
 
 struct WeatherCell: View {
+    private let unit: TemperatureUnit
     private let viewModel: WeatherViewModel
 
     var body: some View {
@@ -87,13 +88,14 @@ struct WeatherCell: View {
                     .aspectRatio(contentMode: .fit)
             }
 
-            Text("\(viewModel.temperature)")
+            Text("\(viewModel.convertTemperature(to: unit)) \(String(unit.displayText.prefix(1)))")
         }
         .padding()
         .cornerRadius(10)
     }
 
-    init(vm: WeatherViewModel) {
+    init(vm: WeatherViewModel, unit: TemperatureUnit) {
         self.viewModel = vm
+        self.unit = unit
     }
 }

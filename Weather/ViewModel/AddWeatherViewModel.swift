@@ -10,6 +10,9 @@ import Foundation
 class AddWeatherViewModel: ObservableObject {
     var city = ""
 
+    @Published var showAlert = false
+    @Published var message = ""
+
     private let client = HttpClient()
 
     func save(completion: @escaping (WeatherViewModel) -> Void) {
@@ -20,7 +23,10 @@ class AddWeatherViewModel: ObservableObject {
                     completion(WeatherViewModel(w: weather))
                 }
             case .failure(let error):
-                print(error)
+                DispatchQueue.main.async {
+                    self.showAlert = true
+                    self.message = error.localizedDescription
+                }
             }
         }
     }
